@@ -6,7 +6,7 @@ export interface HeaderProps {
   prop?: string;
 }
 
-export function Header({}: HeaderProps) {
+export function Header() {
   const tg = window.Telegram.WebApp;
 
   const onClose = () => {
@@ -17,7 +17,7 @@ export function Header({}: HeaderProps) {
     <div className={styles.header}>
       <Button onClick={onClose}>Закрыть</Button>
       <span className={styles.username}>
-        {tg.initDataUnsafe?.user?.username}
+        {tg?.initDataUnsafe?.user?.username}
       </span>
     </div>
   );
