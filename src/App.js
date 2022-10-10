@@ -4,10 +4,10 @@ const tg = window.Telegram.WebApp;
 
 function App() {
   const onClose = () => {
-    tg.ready();
+    tg.close();
   };
 
-  useEffect(() => onClose(), []);
+  useEffect(() => tg.ready(), []);
 
   return (
     <div className='App'>
